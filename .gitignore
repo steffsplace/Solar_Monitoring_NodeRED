@@ -1,0 +1,5 @@
+# Node-RED credentials / secrets
+flows/flows_cred.json
+*.secret
+*.env
+.env
