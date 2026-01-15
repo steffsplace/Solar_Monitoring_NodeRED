@@ -1,0 +1,2516 @@
+
+​[
+  {
+    "id": "9c6446beabe43dbf",
+    "type": "tab",
+    "label": "Car Charging",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "264686f826918daf",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Set wallbox",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "4aa2b4ca098adf6b",
+      "8b180b8133085c19",
+      "1332743bda44a389",
+      "5c22991c142cfec5",
+      "b1fcecced13094a3",
+      "84800eb54ee30ab6",
+      "8a863190f19c2f56",
+      "fa3bdfdc8ccf3441"
+    ],
+    "x": 34,
+    "y": 959,
+    "w": 1192,
+    "h": 202
+  },
+  {
+    "id": "812aab6abc58993f",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Calculate charging current",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "bee674e5555b6d78",
+      "ccd14cf8136903e4",
+      "fa370873dc3c1a76",
+      "5bb4d102f2be61ca",
+      "66cbc56bc0ba5cd5",
+      "edee8df5ac8b5c06",
+      "5da148e09691087e",
+      "7231525e18b86fe0",
+      "c12c4f6d84c41f78",
+      "6ee11994ea8ba973",
+      "99e22400c3d51f91",
+      "c5690b0188e851f8",
+      "04b0adc2b16ecdcb"
+    ],
+    "x": 34,
+    "y": 699,
+    "w": 1182,
+    "h": 244.5
+  },
+  {
+    "id": "04b0adc2b16ecdcb",
+    "type": "junction",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "x": 700,
+    "y": 740,
+    "wires": [
+      [
+        "6ee11994ea8ba973"
+      ]
+    ]
+  },
+  {
+    "id": "ea8422e277d74756",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Obtain Data",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "261b4d40395fab22",
+      "644833fda26ebc50",
+      "5f3dd852221dc3e0",
+      "240f0fcdc2eb5483",
+      "c2cf91b84c0b1d13",
+      "5326e3d01797c494",
+      "55101d6b5cff60d0",
+      "54f835f524df8227",
+      "0ed8bf63aab57b57"
+    ],
+    "x": 34,
+    "y": 519,
+    "w": 1182,
+    "h": 162
+  },
+  {
+    "id": "8e9868a71a1d98af",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Trigger",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "893eaa705e61a5e9",
+      "ed222b4a593dafc3",
+      "4a3865e7b4cd8276"
+    ],
+    "x": 34,
+    "y": 359,
+    "w": 372,
+    "h": 142
+  },
+  {
+    "id": "68b4409dec757fa7",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Setup",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "724775a295d27627",
+      "e82835a8be032060"
+    ],
+    "x": 34,
+    "y": 259,
+    "w": 372,
+    "h": 82
+  },
+  {
+    "id": "7d50b05f5811b71d",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Logging",
+    "style": {
+      "stroke": "#6f2fa0",
+      "label": true,
+      "fill": "#6f2fa0",
+      "color": "#6f2fa0",
+      "fill-opacity": "0.1"
+    },
+    "nodes": [
+      "3c4c79ea58a737ad",
+      "59526bbbce5a970e",
+      "8a078275b654db36",
+      "2d9c3bf49498b390",
+      "40c15ed72847ef0d"
+    ],
+    "x": 34,
+    "y": 59,
+    "w": 672,
+    "h": 122
+  },
+  {
+    "id": "51c5432069d1e63f",
+    "type": "group",
+    "z": "9c6446beabe43dbf",
+    "name": "Testing",
+    "style": {
+      "stroke": "#ffC000",
+      "fill": "#ffC000",
+      "fill-opacity": "0.1",
+      "label": true,
+      "color": "#ffC000"
+    },
+    "nodes": [
+      "416f95285049cd6d",
+      "f04cb0486d2f3904",
+      "ec19c6239b192086"
+    ],
+    "x": 774,
+    "y": 59,
+    "w": 362,
+    "h": 82
+  },
+  {
+    "id": "261b4d40395fab22",
+    "type": "api-current-state",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "Current Energy Mode",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_select.energiemodus",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.energymode",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 420,
+    "y": 560,
+    "wires": [
+      [
+        "5f3dd852221dc3e0"
+      ]
+    ]
+  },
+  {
+    "id": "644833fda26ebc50",
+    "type": "api-get-history",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "Power History 2min",
+    "server": "1bbba121ccc50cec",
+    "version": 1,
+    "startDate": "",
+    "endDate": "",
+    "entityId": "sensor.stromzahler_wirkleistung",
+    "entityIdType": "equals",
+    "useRelativeTime": true,
+    "relativeTime": "2 minutes",
+    "flatten": true,
+    "outputType": "array",
+    "outputLocationType": "msg",
+    "outputLocation": "payload.powerHistory",
+    "x": 210,
+    "y": 640,
+    "wires": [
+      [
+        "240f0fcdc2eb5483"
+      ]
+    ]
+  },
+  {
+    "id": "5f3dd852221dc3e0",
+    "type": "api-current-state",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "Current Charger State",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.zaptec_go_2_charger_mode",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.chargerState",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 680,
+    "y": 560,
+    "wires": [
+      [
+        "644833fda26ebc50"
+      ]
+    ]
+  },
+  {
+    "id": "bee674e5555b6d78",
+    "type": "function",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Automatik",
+    "func": "msg.payload.newChargerCurrent = msg.payload.chargerCurrent;\nmsg.payload.newPhases = msg.payload.phases;\n\n// **********\n// * Start charging\n// **********\nif (msg.payload.chargerState == \"connected_requesting\") {\n\n    // Start charging with 3 phases\n    if (\n        msg.payload.power > flow.get(\"config.thresholdPhase3\")\n        && !msg.payload.powerHistory.some((x) => parseFloat(x.state) <= flow.get(\"config.thresholdPhase3\"))\n    ) {\n        msg.payload.newChargerCurrent = 6;\n        msg.payload.newPhases = 3;\n        msg.payload.logentry = \"Start\";\n        msg.payload.state.startTimestamp = Date.now();\n    }\n    // Start charging with 1 phase\n    else if (\n        msg.payload.power > flow.get(\"config.thresholdPhase1\")\n        && !msg.payload.powerHistory.some((x) => parseFloat(x.state) <= flow.get(\"config.thresholdPhase1\"))\n    ) {\n        msg.payload.newChargerCurrent = 6;\n        msg.payload.newPhases = 1;\n        msg.payload.logentry = \"Start\";\n        msg.payload.state.startTimestamp = Date.now();\n    }\n\n}\n\n// **********\n// * Adjust charging\n// **********\nif (\n    msg.payload.chargerState == \"connected_charging\" &&\n    (\n        msg.payload.state.startTimestamp == undefined ||\n        msg.payload.state.startTimestamp < Date.now() - 120000 // Last start was more than 2mins ago\n    )\n) {\n\n    // Determine lowest and highest power value in history and current\n    msg.payload.lowestPower = msg.payload.powerHistory.reduce((min, x) => Math.min(min, parseFloat(x.state)), 10);\n    msg.payload.lowestPower = Math.min(msg.payload.lowestPower, msg.payload.power);\n    msg.payload.highestPower = msg.payload.powerHistory.reduce((max, x) => Math.max(max, parseFloat(x.state)), -10);\n    msg.payload.highestPower = Math.max(msg.payload.highestPower, msg.payload.power);\n\n    // *** Handle 1 phase charging\n    if (msg.payload.phases < 3) {\n        \n        // Adjust power up 1 phase\n        if (\n            msg.payload.lowestPower > flow.get(\"config.thresholdAdjustPhase1\")\n        ) { \n            msg.payload.newChargerCurrent += Math.floor(msg.payload.lowestPower / flow.get(\"config.thresholdAdjustPhase1\"));\n            msg.payload.logentry = \"Adjust up\";\n            if (msg.payload.newChargerCurrent > 16) {\n                msg.payload.newChargerCurrent = 16;\n                msg.payload.logentry = undefined; // no log entry due no change\n\n                // Check if phase switch is needed\n                if (\n                    msg.payload.power > flow.get(\"config.thresholdAdjustPhase3\") // small cap of 230 W to avoid early swiching (hysteresis)\n                    && !msg.payload.powerHistory.some((x) => parseFloat(x.state) <= flow.get(\"config.thresholdAdjustPhase3\"))\n                ) {\n                    // Phase switch to 3 phases\n                    msg.payload.newChargerCurrent = 6;\n                    msg.payload.newPhases = 3;\n                    msg.payload.logentry = \"Phaseswitch up\";\n                    msg.payload.state.startTimestamp = Date.now();\n                }\n            }\n        }\n\n        // Adjust power down 1 phase\n        if (\n            msg.payload.highestPower < 0\n        ) {\n            msg.payload.newChargerCurrent -= Math.ceil(msg.payload.lowestPower * -1 / flow.get(\"config.thresholdAdjustPhase1\"));\n            msg.payload.logentry = \"Adjust down\";\n            if (msg.payload.newChargerCurrent < 6) {\n                msg.payload.newChargerCurrent = 0;\n                msg.payload.logentry = \"Stop\";\n            }\n        }\n\n    }\n\n    // *** Handle 3 phases charging\n    else if (msg.payload.phases >= 3) {\n\n        // Adjust power up 3 phases\n        if (\n            msg.payload.lowestPower > flow.get(\"config.thresholdAdjustPhase3\")\n        ) {\n            msg.payload.newChargerCurrent += Math.floor(msg.payload.lowestPower / flow.get(\"config.thresholdAdjustPhase3\"));\n            msg.payload.logentry = \"Adjust up\";\n            if (msg.payload.newChargerCurrent > 16) {\n                msg.payload.newChargerCurrent = 16;\n                msg.payload.logentry = undefined; // no log entry due no change\n            }\n        }\n\n        // Adjust power down 3 phases\n        if (\n            msg.payload.highestPower < 0\n        ) {\n            msg.payload.newChargerCurrent -= Math.ceil(msg.payload.lowestPower * -1 / flow.get(\"config.thresholdAdjustPhase3\"));\n            msg.payload.logentry = \"Adjust down\";\n            if (msg.payload.newChargerCurrent < 6) {\n\n                // Phase switch\n                msg.payload.newChargerCurrent = 16;\n                msg.payload.newPhases = 1;\n                msg.payload.logentry = \"Phaseswitch down\";\n                msg.payload.state.startTimestamp = Date.now();\n            }\n        }\n    }\n\n    // Error\n    else {\n        node.error(\"Error with number of phases: \" + msg.payload.phases, msg);\n    }\n}\n                \nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 530,
+    "y": 780,
+    "wires": [
+      [
+        "04b0adc2b16ecdcb"
+      ]
+    ]
+  },
+  {
+    "id": "ccd14cf8136903e4",
+    "type": "switch",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Switch Energymode",
+    "property": "payload.energymode",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "Automatik",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "Auto jetzt laden (11kW)",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "Auto jetzt laden (4.1kW)",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "Auto jetzt laden (1.4kW)",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "Pausieren",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 5,
+    "x": 220,
+    "y": 880,
+    "wires": [
+      [
+        "bee674e5555b6d78"
+      ],
+      [
+        "5bb4d102f2be61ca"
+      ],
+      [
+        "99e22400c3d51f91"
+      ],
+      [
+        "c5690b0188e851f8"
+      ],
+      [
+        "fa370873dc3c1a76"
+      ]
+    ]
+  },
+  {
+    "id": "fa370873dc3c1a76",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Pausieren",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.newChargerCurrent",
+        "pt": "msg",
+        "to": "0",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.newPhases",
+        "pt": "msg",
+        "to": "payload.phases",
+        "tot": "msg"
+      },
+      {
+        "t": "set",
+        "p": "payload.logentry",
+        "pt": "msg",
+        "to": "Disconnect",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 520,
+    "y": 740,
+    "wires": [
+      [
+        "04b0adc2b16ecdcb"
+      ]
+    ]
+  },
+  {
+    "id": "5bb4d102f2be61ca",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Laden 11kW",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.newChargerCurrent",
+        "pt": "msg",
+        "to": "16",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.newPhases",
+        "pt": "msg",
+        "to": "3",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.logentry",
+        "pt": "msg",
+        "to": "Start",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 820,
+    "wires": [
+      [
+        "04b0adc2b16ecdcb"
+      ]
+    ]
+  },
+  {
+    "id": "240f0fcdc2eb5483",
+    "type": "api-current-state",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "Current Charger Current",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "number.zuhause_available_current",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.chargerCurrent",
+        "propertyType": "msg",
+        "value": "number",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 450,
+    "y": 640,
+    "wires": [
+      [
+        "54f835f524df8227"
+      ]
+    ]
+  },
+  {
+    "id": "4aa2b4ca098adf6b",
+    "type": "api-call-service",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "Set charger current",
+    "server": "1bbba121ccc50cec",
+    "version": 7,
+    "debugenabled": false,
+    "action": "number.set_value",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "number.zuhause_available_current"
+    ],
+    "labelId": [],
+    "data": "{ \"value\": payload.newChargerCurrent }",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": true,
+    "domain": "number",
+    "service": "set_value",
+    "x": 1110,
+    "y": 1120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "893eaa705e61a5e9",
+    "type": "server-state-changed",
+    "z": "9c6446beabe43dbf",
+    "g": "8e9868a71a1d98af",
+    "name": "Power changed",
+    "server": "1bbba121ccc50cec",
+    "version": 6,
+    "outputs": 1,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "sensor.stromzahler_wirkleistung"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": true,
+    "stateType": "str",
+    "ifState": "",
+    "ifStateType": "num",
+    "ifStateOperator": "lte",
+    "outputOnlyOnStateChange": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 140,
+    "y": 400,
+    "wires": [
+      [
+        "4a3865e7b4cd8276"
+      ]
+    ]
+  },
+  {
+    "id": "c2cf91b84c0b1d13",
+    "type": "api-current-state",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "Current Power",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.stromzahler_wirkleistung",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.power",
+        "propertyType": "msg",
+        "value": "number",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 200,
+    "y": 560,
+    "wires": [
+      [
+        "261b4d40395fab22"
+      ]
+    ]
+  },
+  {
+    "id": "ed222b4a593dafc3",
+    "type": "server-state-changed",
+    "z": "9c6446beabe43dbf",
+    "g": "8e9868a71a1d98af",
+    "name": "Mode changed",
+    "server": "1bbba121ccc50cec",
+    "version": 6,
+    "outputs": 1,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_select.energiemodus",
+        "sensor.zaptec_go_2_charger_mode"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": true,
+    "stateType": "str",
+    "ifState": "",
+    "ifStateType": "num",
+    "ifStateOperator": "lte",
+    "outputOnlyOnStateChange": true,
+    "for": "5",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 140,
+    "y": 460,
+    "wires": [
+      [
+        "4a3865e7b4cd8276"
+      ]
+    ]
+  },
+  {
+    "id": "66cbc56bc0ba5cd5",
+    "type": "switch",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Charger state",
+    "property": "payload.chargerState",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "disconnected",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 200,
+    "y": 760,
+    "wires": [
+      [
+        "fa370873dc3c1a76"
+      ],
+      [
+        "ccd14cf8136903e4"
+      ]
+    ]
+  },
+  {
+    "id": "4a3865e7b4cd8276",
+    "type": "link out",
+    "z": "9c6446beabe43dbf",
+    "g": "8e9868a71a1d98af",
+    "name": "link out 7",
+    "mode": "link",
+    "links": [
+      "5326e3d01797c494"
+    ],
+    "x": 365,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "5326e3d01797c494",
+    "type": "link in",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "link in 5",
+    "links": [
+      "4a3865e7b4cd8276"
+    ],
+    "x": 75,
+    "y": 560,
+    "wires": [
+      [
+        "c2cf91b84c0b1d13"
+      ]
+    ]
+  },
+  {
+    "id": "55101d6b5cff60d0",
+    "type": "link out",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "link out 8",
+    "mode": "link",
+    "links": [
+      "edee8df5ac8b5c06"
+    ],
+    "x": 1175,
+    "y": 640,
+    "wires": []
+  },
+  {
+    "id": "edee8df5ac8b5c06",
+    "type": "link in",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "link in 6",
+    "links": [
+      "55101d6b5cff60d0",
+      "f04cb0486d2f3904"
+    ],
+    "x": 75,
+    "y": 760,
+    "wires": [
+      [
+        "66cbc56bc0ba5cd5"
+      ]
+    ]
+  },
+  {
+    "id": "416f95285049cd6d",
+    "type": "test inject",
+    "z": "9c6446beabe43dbf",
+    "g": "51c5432069d1e63f",
+    "name": "Tests",
+    "onstart": false,
+    "tests": "class TestHelper {\n\tstatic createPayloadMock(energyMode, chargerState, powerCurrent, powerHistory1, powerHistory2, chargerCurrent, phases, state = {}) {\n\t\t\n\t\treturn {\n\t\t\t\"power\": powerCurrent,\n\t\t\t\"energymode\": energyMode,\n\t\t\t\"chargerState\": chargerState,\n\t\t\t\"powerHistory\": [\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-16T21:59:08.405000+00:00\", \"last_updated\": \"2025-06-16T21:59:08.405000+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-16T21:59:18.405000+00:00\", \"last_updated\": \"2025-06-16T21:59:18.405000+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory2.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-16T21:59:37.007610+00:00\", \"last_updated\": \"2025-06-16T21:59:37.007610+00:00\" }\n\t\t\t],\n\t\t\t\"chargerCurrent\": chargerCurrent,\n\t\t\t\"chargerId\": \"0aaad343-fa15-4101-9d45-aa40ba7e2e6f\",\n\t\t\t\"phases\": phases,\n\t\t\t\"state\": state\n\t\t};\n\t}\n};\n\n\nreturn [\n\n\t// **********\n\t// * Disconnect\n\t// **********\n\t{\n\t\tlabel: 'Test Disconnect',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"disconnected\", 1, 1, 1, 1, 1)\n\t\t},\n\t\tassert: function(msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(0);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\n\t// **********\n\t// * Starting\n\t// **********\n\t{\n\t\tlabel: 'Test Starting 1 phase',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 1.381, 1.381, 1.381, 0, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t\tshould(msg.payload.state.startTimestamp).be.approximately(Date.now(), 10);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Starting 3 phases',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 4.141, 4.141, 4.141, 0, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t\tshould(msg.payload.state.startTimestamp).be.approximately(Date.now(), 10);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Starting 3 phases high power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 11, 11, 11, 0, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not starting due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 1.38, 1.381, 1.381, 0, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(0);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not starting due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 1.381, 1.38, 1.381, 0, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(0);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not starting due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 1.381, 1.381, 1.38, 0, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(0);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not starting with 3 phases due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 4.14, 4.141, 4.141, 0, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not starting with 3 phases due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 4.141, 4.14, 4.141, 0, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not starting with 3 phases due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_requesting\", 4.141, 4.141, 4.14, 0, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\n\t// **********\n\t// * Adjust power up\n\t// **********\n\t{\n\t\tlabel: 'Test Adjust up 1 phase',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.231, 0.231, 0.231, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(7);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 1 phase after start',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.231, 0.231, 0.231, 6, 1, { startTimestamp: Date.now() - 120000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(7);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up 1 phase due start timestamp',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.231, 0.231, 0.231, 6, 1, { startTimestamp: Date.now() - 119000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 1 phase 2A',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.461, 0.461, 0.461, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(8);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 3 phase',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.691, 0.691, 6, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(7);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 3 phase after start',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.691, 0.691, 6, 3, { startTimestamp: Date.now() - 120000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(7);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up 3 phase due start timestamp',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.691, 0.691, 6, 3, { startTimestamp: Date.now() - 119000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 3 phase 2A',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 1.381, 1.381, 1.381, 6, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(8);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up phase switch',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.691, 0.691, 16, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 2A phase switch',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691 + 0.23, 0.691 + 0.23, 0.691 + 0.23, 15, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 11kW phase switch',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 11, 11, 11, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 3 phase max reached',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.691, 0.691, 16, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust up 3 phase 2A max reached',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 1.381, 1.381, 1.381, 15, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up 1 phase due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.23, 0.231, 0.231, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up 1 phase due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.231, 0.23, 0.231, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up 1 phase due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.231, 0.231, 0.23, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up phase switch due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.69, 0.691, 0.691, 16, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up phase switch due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.69, 0.691, 16, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust up phase switch due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0.691, 0.691, 0.69, 16, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\n\t// **********\n\t// * Adjust power down\n\t// **********\n\t{\n\t\tlabel: 'Test Adjust down 1 phase',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 7, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down 1 phase after start',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 7, 1, { startTimestamp: Date.now() - 120000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 1 phase due start timestamp',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 7, 1, { startTimestamp: Date.now() - 119000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(7);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down 1 phase 2A',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.231, -0.231, -0.231, 8, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down 3 phase',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 7, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down 3 phase after start',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 7, 3, { startTimestamp: Date.now() - 120000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 3 phase due start timestamp',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 7, 3, { startTimestamp: Date.now() - 119000 })\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(7);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down 3 phase 2A',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.691, -0.691, -0.691, 8, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down phase switch',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 6, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down phase switch 2A',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.691, -0.691, -0.691, 7, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Adjust down phase switch 11KW',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -11, -11, -11, 16, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(16);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 1 phase due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0, -0.001, -0.001, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 1 phase due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, 0, -0.001, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 1 phase due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, 0, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 3 phase due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0, -0.001, -0.001, 6, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 3 phase due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, 0, -0.001, 6, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not adjust down 3 phase due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, 0, 6, 3)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(3);\n\t\t}\n\t},\n\n\t// **********\n\t// * Stopping\n\t// **********\n\t{\n\t\tlabel: 'Test Stopping',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, -0.001, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(0);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not stopping due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", 0, -0.001, -0.001, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not stopping due older history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, 0, -0.001, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not stopping due newer history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"Automatik\", \"connected_charging\", -0.001, -0.001, 0, 6, 1)\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newChargerCurrent).equals(6);\n\t\t\tshould(msg.payload.newPhases).equals(1);\n\t\t}\n\t}\n\n]",
+    "x": 1010,
+    "y": 100,
+    "wires": [
+      [
+        "f04cb0486d2f3904"
+      ]
+    ]
+  },
+  {
+    "id": "f04cb0486d2f3904",
+    "type": "link out",
+    "z": "9c6446beabe43dbf",
+    "g": "51c5432069d1e63f",
+    "name": "link out 9",
+    "mode": "link",
+    "links": [
+      "edee8df5ac8b5c06"
+    ],
+    "x": 1095,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "ec19c6239b192086",
+    "type": "inject",
+    "z": "9c6446beabe43dbf",
+    "g": "51c5432069d1e63f",
+    "name": "Run tests",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "0.5",
+    "topic": "",
+    "x": 880,
+    "y": 100,
+    "wires": [
+      [
+        "416f95285049cd6d"
+      ]
+    ]
+  },
+  {
+    "id": "5da148e09691087e",
+    "type": "assert",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "",
+    "x": 1090,
+    "y": 740,
+    "wires": [
+      [
+        "7231525e18b86fe0"
+      ]
+    ]
+  },
+  {
+    "id": "724775a295d27627",
+    "type": "inject",
+    "z": "9c6446beabe43dbf",
+    "g": "68b4409dec757fa7",
+    "name": "On Start",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 140,
+    "y": 300,
+    "wires": [
+      [
+        "e82835a8be032060"
+      ]
+    ]
+  },
+  {
+    "id": "e82835a8be032060",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "68b4409dec757fa7",
+    "name": "Set Config",
+    "rules": [
+      {
+        "t": "set",
+        "p": "config.thresholdPhase1",
+        "pt": "flow",
+        "to": "1.38",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.thresholdPhase3",
+        "pt": "flow",
+        "to": "4.14",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.thresholdAdjustPhase1",
+        "pt": "flow",
+        "to": "0.23",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.thresholdAdjustPhase3",
+        "pt": "flow",
+        "to": "0.69",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "state",
+        "pt": "flow",
+        "to": "{\"startTimestamp\":0}",
+        "tot": "json"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "54f835f524df8227",
+    "type": "api-current-state",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "Current Phases and Charger ID",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.zaptec_go_2_charger",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.chargerId",
+        "propertyType": "msg",
+        "value": "$entity().attributes.id",
+        "valueType": "jsonata"
+      },
+      {
+        "property": "payload.phases",
+        "propertyType": "msg",
+        "value": "$number($entity().attributes.set_phases)",
+        "valueType": "jsonata"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 730,
+    "y": 640,
+    "wires": [
+      [
+        "0ed8bf63aab57b57"
+      ]
+    ]
+  },
+  {
+    "id": "8b180b8133085c19",
+    "type": "switch",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "If charger current changed",
+    "property": "payload.newChargerCurrent",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "payload.chargerCurrent",
+        "vt": "msg"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 500,
+    "y": 1120,
+    "wires": [
+      [
+        "4aa2b4ca098adf6b"
+      ]
+    ]
+  },
+  {
+    "id": "1332743bda44a389",
+    "type": "switch",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "If phases changed",
+    "property": "payload.newPhases",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "payload.phases",
+        "vt": "msg"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 210,
+    "y": 1060,
+    "wires": [
+      [
+        "8a863190f19c2f56",
+        "fa3bdfdc8ccf3441"
+      ],
+      [
+        "8b180b8133085c19"
+      ]
+    ]
+  },
+  {
+    "id": "5c22991c142cfec5",
+    "type": "api-call-service",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "Stopp charging",
+    "server": "1bbba121ccc50cec",
+    "version": 7,
+    "debugenabled": false,
+    "action": "number.set_value",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "number.zuhause_available_current"
+    ],
+    "labelId": [],
+    "data": "{ \"value\": 0 }",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": true,
+    "domain": "number",
+    "service": "set_value",
+    "x": 680,
+    "y": 1000,
+    "wires": [
+      [
+        "b1fcecced13094a3"
+      ]
+    ]
+  },
+  {
+    "id": "b1fcecced13094a3",
+    "type": "delay",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 860,
+    "y": 1000,
+    "wires": [
+      [
+        "4aa2b4ca098adf6b"
+      ]
+    ]
+  },
+  {
+    "id": "7231525e18b86fe0",
+    "type": "link out",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "link out 10",
+    "mode": "link",
+    "links": [
+      "84800eb54ee30ab6"
+    ],
+    "x": 1175,
+    "y": 740,
+    "wires": []
+  },
+  {
+    "id": "84800eb54ee30ab6",
+    "type": "link in",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "link in 7",
+    "links": [
+      "7231525e18b86fe0"
+    ],
+    "x": 75,
+    "y": 1060,
+    "wires": [
+      [
+        "1332743bda44a389"
+      ]
+    ]
+  },
+  {
+    "id": "c12c4f6d84c41f78",
+    "type": "function",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Logging",
+    "func": "// Init Logarray\nif (!Array.isArray(flow.get(\"log\"))) {\n    flow.set(\"log\", []);\n}\nif (flow.get(\"log\").length == 0) {\n    flow.get(\"log\").push([]);\n}\n\n// **********\n// * Write logentry if available\n// **********\nif (msg.payload.logentry !== undefined && msg._fth === undefined) {\n    \n    // New logentryarray if starting\n    if (msg.payload.logentry == \"Start\") {\n        flow.get(\"log\").unshift([]);\n    }\n\n    // Create logentry\n    let logentry = {\n        \"date\": new Date().toLocaleString(\"de-CH\"),\n        \"action\": msg.payload.logentry,\n        \"chargersetting\": msg.payload.newPhases.toString() + \" • \" + msg.payload.newChargerCurrent.toString() + \" A\",\n        \"payload\": msg.payload\n    }\n\n    // Save logentry\n    let logarray = flow.get(\"log\");\n    let logentryarray = logarray[0];\n    logentryarray.unshift(logentry);\n\n    // Shorten log if needed\n    if (logarray.length > 10) {\n        logarray = logarray.slice(0, 10);\n    }\n\n    // Save log\n    flow.set(\"log\", logarray);\n}\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 960,
+    "y": 740,
+    "wires": [
+      [
+        "5da148e09691087e"
+      ]
+    ]
+  },
+  {
+    "id": "8a863190f19c2f56",
+    "type": "switch",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "If switch up",
+    "property": "payload.newPhases",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "gt",
+        "v": "payload.phases",
+        "vt": "msg"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 450,
+    "y": 1000,
+    "wires": [
+      [
+        "5c22991c142cfec5"
+      ],
+      [
+        "4aa2b4ca098adf6b"
+      ]
+    ]
+  },
+  {
+    "id": "3c4c79ea58a737ad",
+    "type": "inject",
+    "z": "9c6446beabe43dbf",
+    "g": "7d50b05f5811b71d",
+    "name": "Show Log",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 140,
+    "y": 100,
+    "wires": [
+      [
+        "8a078275b654db36"
+      ]
+    ]
+  },
+  {
+    "id": "59526bbbce5a970e",
+    "type": "debug",
+    "z": "9c6446beabe43dbf",
+    "g": "7d50b05f5811b71d",
+    "name": "Log",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload.log",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 550,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "8a078275b654db36",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "7d50b05f5811b71d",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.log",
+        "pt": "msg",
+        "to": "log",
+        "tot": "flow",
+        "dc": true
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 340,
+    "y": 100,
+    "wires": [
+      [
+        "59526bbbce5a970e",
+        "2d9c3bf49498b390"
+      ]
+    ]
+  },
+  {
+    "id": "0ed8bf63aab57b57",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "ea8422e277d74756",
+    "name": "read state",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.state",
+        "pt": "msg",
+        "to": "state",
+        "tot": "flow",
+        "dc": true
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1060,
+    "y": 640,
+    "wires": [
+      [
+        "55101d6b5cff60d0"
+      ]
+    ]
+  },
+  {
+    "id": "6ee11994ea8ba973",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "save state",
+    "rules": [
+      {
+        "t": "set",
+        "p": "state",
+        "pt": "flow",
+        "to": "payload.state",
+        "tot": "msg",
+        "dc": true
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 810,
+    "y": 740,
+    "wires": [
+      [
+        "c12c4f6d84c41f78"
+      ]
+    ]
+  },
+  {
+    "id": "2d9c3bf49498b390",
+    "type": "function",
+    "z": "9c6446beabe43dbf",
+    "g": "7d50b05f5811b71d",
+    "name": "prettyPrintLog",
+    "func": "msg.payload.logPrettyPrint = \"\";\n\nmsg.payload.log.forEach(loggroup => {\n    \n    loggroup = loggroup.reverse();\n\n    loggroup.forEach(logelem => {\n\n        msg.payload.logPrettyPrint += logelem.date.split(\" \")[1];\n        msg.payload.logPrettyPrint += \" \" + logelem.action + \": \" + logelem.chargersetting;\n        msg.payload.logPrettyPrint += \" (\" + logelem.payload.lowestPower + \"-\" + logelem.payload.highestPower + \")\\n\";\n    });\n\n    msg.payload.logPrettyPrint += \"---------------------------\\n\"\n});\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 360,
+    "y": 140,
+    "wires": [
+      [
+        "40c15ed72847ef0d"
+      ]
+    ]
+  },
+  {
+    "id": "40c15ed72847ef0d",
+    "type": "debug",
+    "z": "9c6446beabe43dbf",
+    "g": "7d50b05f5811b71d",
+    "name": "Log Prettyprint",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload.logPrettyPrint",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 580,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "fa3bdfdc8ccf3441",
+    "type": "api-call-service",
+    "z": "9c6446beabe43dbf",
+    "g": "264686f826918daf",
+    "name": "Set phases",
+    "server": "1bbba121ccc50cec",
+    "version": 7,
+    "debugenabled": false,
+    "action": "number.set_value",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "number.zuhause_3_to_1_phase_switch_current"
+    ],
+    "labelId": [],
+    "data": "{ \"value\": payload.newPhases = 3 ? 0 : 32 }",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": true,
+    "domain": "number",
+    "service": "set_value",
+    "x": 450,
+    "y": 1060,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "99e22400c3d51f91",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Laden 4.1kW",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.newChargerCurrent",
+        "pt": "msg",
+        "to": "6",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.newPhases",
+        "pt": "msg",
+        "to": "3",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.logentry",
+        "pt": "msg",
+        "to": "Start",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 860,
+    "wires": [
+      [
+        "04b0adc2b16ecdcb"
+      ]
+    ]
+  },
+  {
+    "id": "c5690b0188e851f8",
+    "type": "change",
+    "z": "9c6446beabe43dbf",
+    "g": "812aab6abc58993f",
+    "name": "Laden 1.4kW",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.newChargerCurrent",
+        "pt": "msg",
+        "to": "6",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.newPhases",
+        "pt": "msg",
+        "to": "1",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "payload.logentry",
+        "pt": "msg",
+        "to": "Start",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 900,
+    "wires": [
+      [
+        "04b0adc2b16ecdcb"
+      ]
+    ]
+  },
+  {
+    "id": "4d5c015542aca360",
+    "type": "tab",
+    "label": "Heating",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "c253664f53a8c282",
+    "type": "group",
+    "z": "4d5c015542aca360",
+    "name": "Logging",
+    "style": {
+      "stroke": "#6f2fa0",
+      "label": true,
+      "fill": "#6f2fa0",
+      "color": "#6f2fa0",
+      "fill-opacity": "0.1"
+    },
+    "nodes": [
+      "453bef9931bb31fd",
+      "4dea6fc69461b09e",
+      "a93e9b536de5b606",
+      "62a4186b75bd2cc4",
+      "e2736c9b60616ccd"
+    ],
+    "x": 14,
+    "y": 39,
+    "w": 552,
+    "h": 122
+  },
+  {
+    "id": "e626417f3b0f3850",
+    "type": "group",
+    "z": "4d5c015542aca360",
+    "name": "Testing",
+    "style": {
+      "stroke": "#ffC000",
+      "fill": "#ffC000",
+      "fill-opacity": "0.1",
+      "label": true,
+      "color": "#ffC000"
+    },
+    "nodes": [
+      "69914370fe4c7acf",
+      "c3d713d906707475",
+      "56a2006b87022b33"
+    ],
+    "x": 594,
+    "y": 39,
+    "w": 422,
+    "h": 82
+  },
+  {
+    "id": "85dfa01b330fbbd4",
+    "type": "group",
+    "z": "4d5c015542aca360",
+    "name": "Set heating temperatures",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "ef4fd58ec2e802e7",
+      "f0cdaf1bc1b8d08b",
+      "67ee701628cd2a5c",
+      "d97252a47d264b49",
+      "ff02b339a7c0d573",
+      "53530524d9a41c29",
+      "2e706d79d5f4e05d",
+      "f628f6f5d7c36009",
+      "71555ff5df02e599",
+      "c46eef3e86bd4b83"
+    ],
+    "x": 14,
+    "y": 599,
+    "w": 972,
+    "h": 242
+  },
+  {
+    "id": "04f9782eb4c7cb94",
+    "type": "group",
+    "z": "4d5c015542aca360",
+    "name": "Obtain Data",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "1ef269d2c5ac9471",
+      "ed1905c217f9b2fc",
+      "74af534ea56d7ab4",
+      "7462a3575e477276",
+      "20ebdeb412180ad3",
+      "a1884292e6736248",
+      "a3bc5434a6650f1d",
+      "86f1aa4a85c67d0d",
+      "e39a303e46a7a6ad"
+    ],
+    "x": 14,
+    "y": 419,
+    "w": 1032,
+    "h": 162
+  },
+  {
+    "id": "10f8691a64288030",
+    "type": "group",
+    "z": "4d5c015542aca360",
+    "name": "Trigger",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "107497593f7b357e",
+      "940a31cd1cbf854c",
+      "11c9cc39e95833ee"
+    ],
+    "x": 14,
+    "y": 319,
+    "w": 532,
+    "h": 82
+  },
+  {
+    "id": "17f74b35e804c007",
+    "type": "group",
+    "z": "4d5c015542aca360",
+    "name": "Setup",
+    "style": {
+      "label": true
+    },
+    "nodes": [
+      "167325c3e7c21d82",
+      "b064ee606296f34d"
+    ],
+    "x": 14,
+    "y": 219,
+    "w": 392,
+    "h": 82
+  },
+  {
+    "id": "167325c3e7c21d82",
+    "type": "inject",
+    "z": "4d5c015542aca360",
+    "g": "17f74b35e804c007",
+    "name": "On Start",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 120,
+    "y": 260,
+    "wires": [
+      [
+        "b064ee606296f34d"
+      ]
+    ]
+  },
+  {
+    "id": "1ef269d2c5ac9471",
+    "type": "api-get-history",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Power History 5min",
+    "server": "1bbba121ccc50cec",
+    "version": 1,
+    "startDate": "",
+    "endDate": "",
+    "entityId": "sensor.stromzahler_wirkleistung",
+    "entityIdType": "equals",
+    "useRelativeTime": true,
+    "relativeTime": "5 minutes",
+    "flatten": true,
+    "outputType": "array",
+    "outputLocationType": "msg",
+    "outputLocation": "payload.powerHistory",
+    "x": 410,
+    "y": 460,
+    "wires": [
+      [
+        "7462a3575e477276"
+      ]
+    ]
+  },
+  {
+    "id": "ed1905c217f9b2fc",
+    "type": "api-current-state",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Current Power",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.stromzahler_wirkleistung",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.power",
+        "propertyType": "msg",
+        "value": "number",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 200,
+    "y": 460,
+    "wires": [
+      [
+        "1ef269d2c5ac9471"
+      ]
+    ]
+  },
+  {
+    "id": "107497593f7b357e",
+    "type": "link out",
+    "z": "4d5c015542aca360",
+    "g": "10f8691a64288030",
+    "name": "link out 4",
+    "mode": "link",
+    "links": [
+      "74af534ea56d7ab4"
+    ],
+    "x": 505,
+    "y": 360,
+    "wires": []
+  },
+  {
+    "id": "74af534ea56d7ab4",
+    "type": "link in",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "link in 3",
+    "links": [
+      "107497593f7b357e"
+    ],
+    "x": 55,
+    "y": 460,
+    "wires": [
+      [
+        "ed1905c217f9b2fc"
+      ]
+    ]
+  },
+  {
+    "id": "7462a3575e477276",
+    "type": "api-current-state",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Energy Forecast Current Hour",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.energy_current_hour",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.energyForecast",
+        "propertyType": "msg",
+        "value": "number",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 690,
+    "y": 460,
+    "wires": [
+      [
+        "20ebdeb412180ad3"
+      ]
+    ]
+  },
+  {
+    "id": "20ebdeb412180ad3",
+    "type": "api-current-state",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Heatpump State",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.luxtronik_330612_018_status",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.heatpumpState",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 200,
+    "y": 540,
+    "wires": [
+      [
+        "a1884292e6736248"
+      ]
+    ]
+  },
+  {
+    "id": "a1884292e6736248",
+    "type": "api-current-state",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Boiler State",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "water_heater.luxtronik_330612_018_domestic_water",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.boilerState",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 410,
+    "y": 540,
+    "wires": [
+      [
+        "e39a303e46a7a6ad"
+      ]
+    ]
+  },
+  {
+    "id": "69914370fe4c7acf",
+    "type": "inject",
+    "z": "4d5c015542aca360",
+    "g": "e626417f3b0f3850",
+    "name": "Run tests",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "0.5",
+    "topic": "",
+    "x": 700,
+    "y": 80,
+    "wires": [
+      [
+        "c3d713d906707475"
+      ]
+    ]
+  },
+  {
+    "id": "c3d713d906707475",
+    "type": "test inject",
+    "z": "4d5c015542aca360",
+    "g": "e626417f3b0f3850",
+    "name": "Tests",
+    "onstart": false,
+    "tests": "class TestHelper {\n\tstatic createPayloadMock(heatpumpState, heatpumpStateTimeSinceChangedMin, boilerTempCurrent, boilerTempTarget, powerCurrent, powerHistory1, powerHistory2, energyForecast, currentDate) {\n\t\treturn {\n\t\t\t\"power\": powerCurrent,\n\t\t\t\"powerHistory\": [\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:33:38.711000+00:00\", \"last_updated\": \"2025-06-23T23:33:38.711000+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:33:52.020215+00:00\", \"last_updated\": \"2025-06-23T23:33:52.020215+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:34:22.021071+00:00\", \"last_updated\": \"2025-06-23T23:34:22.021071+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:34:52.021868+00:00\", \"last_updated\": \"2025-06-23T23:34:52.021868+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:35:22.022718+00:00\", \"last_updated\": \"2025-06-23T23:35:22.022718+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:35:52.023575+00:00\", \"last_updated\": \"2025-06-23T23:35:52.023575+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:36:22.024324+00:00\", \"last_updated\": \"2025-06-23T23:36:22.024324+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:36:52.020303+00:00\", \"last_updated\": \"2025-06-23T23:36:52.020303+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory1.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:37:22.021510+00:00\", \"last_updated\": \"2025-06-23T23:37:22.021510+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory2.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:37:52.021998+00:00\", \"last_updated\": \"2025-06-23T23:37:52.021998+00:00\" },\n\t\t\t\t{ \"entity_id\": \"sensor.stromzahler_wirkleistung\", \"state\": powerHistory2.toString(), \"attributes\": { \"state_class\": \"measurement\", \"unit_of_measurement\": \"kW\", \"device_class\": \"power\", \"icon\": \"mdi:flash\", \"friendly_name\": \"Stromzähler Wirkleistung\" }, \"last_changed\": \"2025-06-23T23:38:22.022844+00:00\", \"last_updated\": \"2025-06-23T23:38:22.022844+00:00\" }\n\t\t\t],\n\t\t\t\"energyForecast\": energyForecast,\n\t\t\t\"heatpumpState\": { \"entity_id\": \"sensor.luxtronik_330612_018_status\", \"state\": heatpumpState, \"attributes\": { \"options\": [\"heating\", \"hot water\", \"swimming pool/solar\", \"evu\", \"defrost\", \"no request\", \"heating external source\", \"cooling\"], \"Luxtronik_Key\": \"0080 calculations.ID_WEB_WP_BZ_akt\", \"status_raw\": \"no request\", \"status_text\": \"Die Wärmepumpe läuft seit 0:00 h.\", \"EVU_minutes_until_next_event\": \"566\", \"EVU_first_start_time\": \"11:04\", \"EVU_first_end_time\": \"12:04\", \"EVU_second_start_time\": \"\", \"EVU_second_end_time\": \"\", \"device_class\": \"enum\", \"icon\": \"mdi:hvac-off\", \"friendly_name\": \"Wärmepumpe Status\" }, \"context\": { \"id\": \"01JYFJGTZW2MPVY63B4FX0D9G0\", \"parent_id\": null, \"user_id\": null }, \"last_changed\": \"2025-06-23T16:07:23.899Z\", \"last_updated\": \"2025-06-23T23:38:35.900Z\", \"timeSinceChangedMs\": heatpumpStateTimeSinceChangedMin * 60 * 1000 },\n\t\t\t\"boilerState\": { \"entity_id\": \"water_heater.luxtronik_330612_018_domestic_water\", \"state\": \"heat_pump\", \"attributes\": { \"min_temp\": 40, \"max_temp\": 65, \"operation_list\": [\"off\", \"heat_pump\", \"electric\", \"performance\"], \"current_temperature\": boilerTempCurrent, \"temperature\": boilerTempTarget, \"target_temp_high\": 65, \"target_temp_low\": 42, \"operation_mode\": \"heat_pump\", \"away_mode\": \"off\", \"Luxtronik_Key\": \"0004 parameters.ID_Ba_Bw_akt\", \"luxtronik_key_current_temperature\": \"0017 calculations.ID_WEB_Temperatur_TBW\", \"luxtronik_key_current_action\": \"0080 calculations.ID_WEB_WP_BZ_akt\", \"luxtronik_key_target_temperature\": \"0002 parameters.ID_Einst_BWS_akt\", \"luxtronik_key_target_temperature_high\": \"NSET UNSET\", \"luxtronik_key_target_temperature_low\": \"NSET UNSET\", \"icon\": \"mdi:water-boiler-auto\", \"friendly_name\": \"Warmwasser Boiler Brauchwasser\", \"supported_features\": 7 }, \"context\": { \"id\": \"01JYFJGTZSWYZPJGYZV76M2G1X\", \"parent_id\": null, \"user_id\": null }, \"last_changed\": \"2025-06-22T18:13:23.720Z\", \"last_updated\": \"2025-06-23T23:38:35.897Z\", \"timeSinceChangedMs\": 105915032 },\n\t\t\t\"currentDate\": currentDate\n\t\t};\n\t}\n};\n\n/*\nreturn [\n\n\t// **********\n\t// *** Start\n\t// **********\n\t{\n\t\tlabel: 'Test Starting before noon',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2.01, 2.01, 2.01, 2.01, new Date(\"2025-07-02T10:29:00\"))\n\t\t},\n\t\tassert: function(msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(60);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Starting after noon',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2.01, 2.01, 2.01, 2.01, new Date(\"2025-07-02T11:31:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(60);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2, 2.01, 2.01, 2.01, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2.01, 2.01, 2, 2.01, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due forecast',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2.01, 2.01, 2.01, 2, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due watertemp',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 10, 50, 42, 2.01, 2.01, 2.01, 2.01, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due watertemp and reset water temp setting',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 10, 50, 60, 2.01, 2.01, 2.01, 2.01, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due time before noon',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2.01, 2.01, 2.01, 2.01, new Date(\"2025-07-02T10:30:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not started due time after noon',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"no request\", 0, 49.99, 42, 2.01, 2.01, 2.01, 2.01, new Date(\"2025-07-02T11:30:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n\n\t// **********\n\t// ***  Stop\n\t// **********\n\t{\n\t\tlabel: 'Test Not stopped due history power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"hot water\", 31, 49.99, 60, -0.200, 0, -0.199, 2, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(60);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not stopped due current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"hot water\", 31, 49.99, 60, -0.999, 0, -0.200, 2, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(60);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Not stopped due runtime',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"hot water\", 30, 49.99, 60, -1, -0.200, -0.200, 2, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(60);\n\t\t}\n\t},\n\t{\n\t\tlabel: 'Test Stopped due history and current power',\n\t\tinject: {\n\t\t\tpayload: TestHelper.createPayloadMock(\"hot water\", 31, 49.99, 60, 0, -0.299, -0.300, 2, new Date(\"2025-07-02T10:00:00\"))\n\t\t},\n\t\tassert: function (msg) {\n\t\t\tshould(msg.payload.newWaterTemp).equals(42);\n\t\t}\n\t},\n]\n*/",
+    "x": 850,
+    "y": 80,
+    "wires": [
+      [
+        "56a2006b87022b33"
+      ]
+    ]
+  },
+  {
+    "id": "56a2006b87022b33",
+    "type": "link out",
+    "z": "4d5c015542aca360",
+    "g": "e626417f3b0f3850",
+    "name": "link out 5",
+    "mode": "link",
+    "links": [
+      "ef4fd58ec2e802e7"
+    ],
+    "x": 975,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "a3bc5434a6650f1d",
+    "type": "link out",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "link out 6",
+    "mode": "link",
+    "links": [
+      "ef4fd58ec2e802e7"
+    ],
+    "x": 1005,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "ef4fd58ec2e802e7",
+    "type": "link in",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "link in 4",
+    "links": [
+      "a3bc5434a6650f1d",
+      "56a2006b87022b33"
+    ],
+    "x": 55,
+    "y": 640,
+    "wires": [
+      [
+        "71555ff5df02e599"
+      ]
+    ]
+  },
+  {
+    "id": "f0cdaf1bc1b8d08b",
+    "type": "assert",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "",
+    "x": 390,
+    "y": 640,
+    "wires": [
+      [
+        "d97252a47d264b49",
+        "2e706d79d5f4e05d"
+      ]
+    ]
+  },
+  {
+    "id": "67ee701628cd2a5c",
+    "type": "function",
+    "z": "4d5c015542aca360",
+    "d": true,
+    "g": "85dfa01b330fbbd4",
+    "name": "Old Set Boiler Target Temp",
+    "func": "msg.payload.newWaterTemp = msg.payload.boilerState.attributes.temperature;\n\n// Heatpump is not running or is heating\nif (msg.payload.heatpumpState.state == \"no request\" || msg.payload.heatpumpState.state == \"heating\") {\n\n    // Turn on, if enough energy available and the water temp is low\n    if (\n        msg.payload.power > flow.get(\"config.neededEnergy\")\n        && !msg.payload.powerHistory.some((x) => parseFloat(x.state) <= flow.get(\"config.neededEnergy\"))\n        && msg.payload.energyForecast > flow.get(\"config.neededEnergy\")\n        && msg.payload.boilerState.attributes.current_temperature < flow.get(\"config.waterTempThreshold\")\n    ) {\n        \n        // Do not start if shortly before the EVU blocking time\n        let evuBlockMinutes = msg.payload.heatpumpState.attributes.EVU_minutes_until_next_event;\n        if (evuBlockMinutes >= 30) {\n            msg.payload.newWaterTemp = flow.get(\"config.waterTempTarget\");\n        }\n    }\n    \n    // Reset water temp setting if not enough energy is available or water temp is high\n    else {\n        msg.payload.newWaterTemp = flow.get(\"config.waterTempMinimal\");\n    }\n\n}\n\n// Heatpump is running for hot water\nelse if (msg.payload.heatpumpState.state == \"hot water\") {\n\n    // Turn off, if not enough energy is available and heat pump is running for more than \"config.pumpRuntimeMinutesMinimal\"\n    if (\n        (\n            msg.payload.powerHistory.slice(-2).every((x) => parseFloat(x.state) <= -0.3)\n        )\n        && msg.payload.heatpumpState.timeSinceChangedMs > flow.get(\"config.pumpRuntimeMinutesMinimal\") * 60 * 1000\n    ) {\n        msg.payload.newWaterTemp = flow.get(\"config.waterTempMinimal\");\n    }\n\n    // Turn on, if enough energy available and the water temp is low (after autostart through lower threshold)\n    if (\n        msg.payload.power > 0\n        && !msg.payload.powerHistory.some((x) => parseFloat(x.state) <= 0)\n        && msg.payload.energyForecast > flow.get(\"config.neededEnergy\")\n        && msg.payload.boilerState.attributes.current_temperature < flow.get(\"config.waterTempThreshold\")\n    ) {\n\n        // Do not start if shortly before the EVU blocking time (11:04 - 12:04)\n        let currentMinutesSinceMidnight = msg.payload.currentDate.getHours() * 60 + msg.payload.currentDate.getMinutes();\n        if (currentMinutesSinceMidnight < 10 * 60 + 30 || currentMinutesSinceMidnight > 11 * 60 + 30) {\n            msg.payload.newWaterTemp = flow.get(\"config.waterTempTarget\");\n        }\n    }\n\n}\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 760,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d97252a47d264b49",
+    "type": "switch",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "If water temp changed",
+    "property": "payload.newWaterTemp",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "payload.boilerState.attributes.temperature",
+        "vt": "msg"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 620,
+    "y": 640,
+    "wires": [
+      [
+        "ff02b339a7c0d573"
+      ]
+    ]
+  },
+  {
+    "id": "ff02b339a7c0d573",
+    "type": "api-call-service",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "Set water temp",
+    "server": "1bbba121ccc50cec",
+    "version": 7,
+    "debugenabled": false,
+    "action": "number.set_value",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "number.luxtronik_330612_018_dhw_target_temperature"
+    ],
+    "labelId": [],
+    "data": "{\"value\": payload.newWaterTemp}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": true,
+    "domain": "number",
+    "service": "set_value",
+    "x": 860,
+    "y": 640,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "940a31cd1cbf854c",
+    "type": "server-state-changed",
+    "z": "4d5c015542aca360",
+    "g": "10f8691a64288030",
+    "name": "Power changed",
+    "server": "1bbba121ccc50cec",
+    "version": 6,
+    "outputs": 1,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "sensor.stromzahler_wirkleistung"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": true,
+    "stateType": "str",
+    "ifState": "",
+    "ifStateType": "num",
+    "ifStateOperator": "lte",
+    "outputOnlyOnStateChange": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [],
+    "x": 120,
+    "y": 360,
+    "wires": [
+      [
+        "11c9cc39e95833ee"
+      ]
+    ]
+  },
+  {
+    "id": "11c9cc39e95833ee",
+    "type": "delay",
+    "z": "4d5c015542aca360",
+    "g": "10f8691a64288030",
+    "name": "",
+    "pauseType": "rate",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "minute",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": true,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 340,
+    "y": 360,
+    "wires": [
+      [
+        "107497593f7b357e"
+      ]
+    ]
+  },
+  {
+    "id": "86f1aa4a85c67d0d",
+    "type": "change",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Current DateTime",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.currentDate",
+        "pt": "msg",
+        "to": "object",
+        "tot": "date"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 850,
+    "y": 540,
+    "wires": [
+      [
+        "a3bc5434a6650f1d"
+      ]
+    ]
+  },
+  {
+    "id": "b064ee606296f34d",
+    "type": "change",
+    "z": "4d5c015542aca360",
+    "g": "17f74b35e804c007",
+    "name": "Set Config",
+    "rules": [
+      {
+        "t": "set",
+        "p": "config.neededEnergy",
+        "pt": "flow",
+        "to": "1.8",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.waterTempTarget",
+        "pt": "flow",
+        "to": "60",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.waterTempMinimal",
+        "pt": "flow",
+        "to": "44",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.waterTempThreshold",
+        "pt": "flow",
+        "to": "52",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.pumpRuntimeMinutesMinimal",
+        "pt": "flow",
+        "to": "30",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.heatingTempTargetMinimal",
+        "pt": "flow",
+        "to": "0",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.heatingTempTargetOverheat",
+        "pt": "flow",
+        "to": "5",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.energyThresholdWhileForcedRunning",
+        "pt": "flow",
+        "to": "-0.5",
+        "tot": "num"
+      },
+      {
+        "t": "set",
+        "p": "config.energyThresholdForForcingWhileRunning",
+        "pt": "flow",
+        "to": "1",
+        "tot": "num"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 310,
+    "y": 260,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "53530524d9a41c29",
+    "type": "function",
+    "z": "4d5c015542aca360",
+    "d": true,
+    "g": "85dfa01b330fbbd4",
+    "name": "Old Set Heating Temp",
+    "func": "msg.payload.newHeatingTempTarget = flow.get(\"config.heatingTempTargetMinimal\");\n\n// Heatpump is not running or is heating\nif (msg.payload.heatpumpState.state == \"no request\" || msg.payload.heatpumpState.state == \"hot water\") {\n\n    // Turn on, if enough energy available\n    if (\n        msg.payload.power > flow.get(\"config.neededEnergy\")\n        && !msg.payload.powerHistory.some((x) => parseFloat(x.state) <= flow.get(\"config.neededEnergy\"))\n        && msg.payload.energyForecast > flow.get(\"config.neededEnergy\")\n    ) {\n        \n        // Do not start if shortly before the EVU blocking time\n        let evuBlockMinutes = msg.payload.heatpumpState.attributes.EVU_minutes_until_next_event;\n        if (evuBlockMinutes >= 30) {\n            msg.payload.newHeatingTemp = flow.get(\"config.heatingTempTargetOverheat\");\n        }\n    }\n    \n    // Reset temp setting if not enough energy is available or water temp is high\n    else {\n        msg.payload.newWaterTemp = flow.get(\"config.heatingTempTargetMinimal\");\n    }\n\n}\n\n// Heatpump is running for heating\nelse if (msg.payload.heatpumpState.state == \"heating\") {\n\n    // Turn off, if not enough energy is available and heat pump is running for more than \"config.pumpRuntimeMinutesMinimal\"\n    if (\n        (\n            msg.payload.powerHistory.slice(-2).every((x) => parseFloat(x.state) <= -0.3)\n        )\n        && msg.payload.heatpumpState.timeSinceChangedMs > flow.get(\"config.pumpRuntimeMinutesMinimal\") * 60 * 1000\n    ) {\n        msg.payload.newWaterTemp = flow.get(\"config.heatingTempTargetMinimal\");\n    }\n\n}\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 220,
+    "y": 800,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e39a303e46a7a6ad",
+    "type": "api-current-state",
+    "z": "4d5c015542aca360",
+    "g": "04f9782eb4c7cb94",
+    "name": "Heating Target",
+    "server": "1bbba121ccc50cec",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "number.luxtronik_330612_018_heating_target_correction",
+    "state_type": "str",
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload.heatingTarget",
+        "propertyType": "msg",
+        "value": "number",
+        "valueType": "entityState"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 620,
+    "y": 540,
+    "wires": [
+      [
+        "86f1aa4a85c67d0d"
+      ]
+    ]
+  },
+  {
+    "id": "2e706d79d5f4e05d",
+    "type": "switch",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "If heating target changed",
+    "property": "payload.heatingTarget",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "payload.newHeatingTempTarget",
+        "vt": "msg"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 630,
+    "y": 700,
+    "wires": [
+      [
+        "f628f6f5d7c36009"
+      ]
+    ]
+  },
+  {
+    "id": "f628f6f5d7c36009",
+    "type": "api-call-service",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "Set Heating Target",
+    "server": "1bbba121ccc50cec",
+    "version": 7,
+    "debugenabled": false,
+    "action": "number.set_value",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "number.luxtronik_330612_018_heating_target_correction"
+    ],
+    "labelId": [],
+    "data": "{\"value\": payload.newHeatingTempTarget}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": true,
+    "domain": "number",
+    "service": "set_value",
+    "x": 870,
+    "y": 700,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "71555ff5df02e599",
+    "type": "function",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "Heating Logic",
+    "func": "// **********\n// * Initialize\n// **********\n\n// Return Values\nmsg.payload.newWaterTemp = msg.payload.boilerState.attributes.temperature;\nmsg.payload.newHeatingTempTarget = msg.payload.heatingTarget;\n\n// Determine EVU Blocking\nlet isEvuBlockComming = ((parseFloat(msg.payload.heatpumpState.attributes.EVU_minutes_until_next_event)) == Number.NaN) ? false : parseFloat(msg.payload.heatpumpState.attributes.EVU_minutes_until_next_event) < flow.get(\"config.pumpRuntimeMinutesMinimal\");\n\n// Determine Pump Runtime\nlet isPumpRuntimeEnough = msg.payload.heatpumpState.timeSinceChangedMs > flow.get(\"config.pumpRuntimeMinutesMinimal\") * 60 * 1000\n\n// **********\n// * Determine Energy\n// **********\nlet isHeatingForced = msg.payload.boilerState.attributes.temperature == flow.get(\"config.waterTempTarget\") || msg.payload.heatingTarget == flow.get(\"config.heatingTempTargetOverheat\");\nlet isEnergyForecaseEnough = (msg.payload.energyForecast ?? 999) > flow.get(\"config.neededEnergy\");\nlet isEnergyEnough = false;\n\nif (msg.payload.heatpumpState.state != \"hot water\" && msg.payload.heatpumpState.state != \"heating\") {\n\n    // heatpump not working\n    isEnergyEnough = (\n        msg.payload.power > flow.get(\"config.neededEnergy\")\n        && msg.payload.powerHistory.every((x) => parseFloat(x.state) > flow.get(\"config.neededEnergy\"))\n    );\n} else {\n    \n    // heatpump heating\n    if (isHeatingForced) {\n        isEnergyEnough = msg.payload.powerHistory.slice(-2).every((x) => parseFloat(x.state) <= flow.get(\"config.energyThresholdWhileForcedRunning\"))\n    } else {\n        isEnergyEnough = (\n            msg.payload.power > flow.get(\"config.energyThresholdForForcingWhileRunning\")\n            && msg.payload.powerHistory.every((x) => parseFloat(x.state) > flow.get(\"config.energyThresholdForForcingWhileRunning\"))\n        );\n    }\n}\n\nlet logAction = \"No Changes Made\";\n\n// **********\n// * Starting Events\n// **********\nif (isEnergyEnough && isEnergyForecaseEnough && !isEvuBlockComming) {\n    \n    // Water Temp low => start boiler\n    if (msg.payload.boilerState.attributes.current_temperature < flow.get(\"config.waterTempThreshold\")) {\n        msg.payload.newWaterTemp = flow.get(\"config.waterTempTarget\");\n        logAction = \"Start Boiler\";\n    }\n\n    // Water Temp high => start heater\n    else if (\n        msg.payload.boilerState.attributes.current_temperature >= flow.get(\"config.waterTempTarget\")\n        || (msg.payload.heatpumpState.state != \"hot water\" && msg.payload.boilerState.attributes.current_temperature > flow.get(\"config.waterTempThreshold\"))\n    ) {\n        msg.payload.newHeatingTempTarget = flow.get(\"config.heatingTempTargetOverheat\");\n        logAction = \"Start Heater\";\n    }\n}\n\n// **********\n// * Stopping Events\n// **********\nif (!isEnergyEnough && isPumpRuntimeEnough) {\n    msg.payload.newWaterTemp = flow.get(\"config.waterTempMinimal\");\n    msg.payload.newHeatingTempTarget = flow.get(\"config.heatingTempTargetMinimal\");\n    logAction = \"Stop Boiler & Heater\";\n}\n\n// **********\n// * Debugging\n// **********\nmsg.payload.logentry = logAction + \":\\n\" + JSON.stringify({\n    datettime: (new Date()).toLocaleString(\"de-ch\"),\n    state: msg.payload.heatpumpState.state,\n    isEnergyEnough: isEnergyEnough + \" (\" + msg.payload.power + \" | \" + msg.payload.powerHistory.reduce((r, e) => r += e.state + \" \", \"\") + \")\",\n    isEnergyForecaseEnough: isEnergyForecaseEnough + \" (\" + msg.payload.energyForecast + \")\",\n    isEvuBlockComming: isEvuBlockComming + \" (\" + msg.payload.heatpumpState.attributes.EVU_minutes_until_next_event + \")\",\n    isHeatingForced: isHeatingForced + \" (W:\" + msg.payload.boilerState.attributes.temperature + \" H:\" + msg.payload.heatingTarget + \")\",\n    isPumpRuntimeEnough: isPumpRuntimeEnough + \" (\" + msg.payload.heatpumpState.timeSinceChangedMs + \")\",\n    currentWaterTemp: msg.payload.boilerState.attributes.current_temperature,\n    newWaterTemp: msg.payload.newWaterTemp,\n    newHeatingTempTarget: msg.payload.newHeatingTempTarget\n}, null, 2);\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 200,
+    "y": 640,
+    "wires": [
+      [
+        "f0cdaf1bc1b8d08b",
+        "c46eef3e86bd4b83"
+      ]
+    ]
+  },
+  {
+    "id": "c46eef3e86bd4b83",
+    "type": "function",
+    "z": "4d5c015542aca360",
+    "g": "85dfa01b330fbbd4",
+    "name": "Logging",
+    "func": "// Init Logarray\nif (!Array.isArray(flow.get(\"log\"))) {\n    flow.set(\"log\", []);\n}\n\n// **********\n// * Write logentry if available\n// **********\nif (msg.payload.logentry !== undefined && msg._fth === undefined) {\n\n    // Save logentry\n    let logarray = flow.get(\"log\");\n    logarray.unshift(msg.payload.logentry);\n\n    // Shorten log if needed\n    if (logarray.length > 500) {\n        logarray = logarray.slice(0, 500);\n    }\n\n    // Save log\n    flow.set(\"log\", logarray);\n}\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 400,
+    "y": 700,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "453bef9931bb31fd",
+    "type": "inject",
+    "z": "4d5c015542aca360",
+    "g": "c253664f53a8c282",
+    "name": "Show Log",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 120,
+    "y": 80,
+    "wires": [
+      [
+        "a93e9b536de5b606"
+      ]
+    ]
+  },
+  {
+    "id": "4dea6fc69461b09e",
+    "type": "debug",
+    "z": "4d5c015542aca360",
+    "g": "c253664f53a8c282",
+    "name": "Log",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload.log",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 470,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "a93e9b536de5b606",
+    "type": "change",
+    "z": "4d5c015542aca360",
+    "g": "c253664f53a8c282",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.log",
+        "pt": "msg",
+        "to": "log",
+        "tot": "flow",
+        "dc": true
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 300,
+    "y": 80,
+    "wires": [
+      [
+        "4dea6fc69461b09e"
+      ]
+    ]
+  },
+  {
+    "id": "62a4186b75bd2cc4",
+    "type": "inject",
+    "z": "4d5c015542aca360",
+    "g": "c253664f53a8c282",
+    "name": "Clear Log",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 120,
+    "y": 120,
+    "wires": [
+      [
+        "e2736c9b60616ccd"
+      ]
+    ]
+  },
+  {
+    "id": "e2736c9b60616ccd",
+    "type": "change",
+    "z": "4d5c015542aca360",
+    "g": "c253664f53a8c282",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "log",
+        "pt": "flow",
+        "to": "[]",
+        "tot": "jsonata",
+        "dc": true
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 280,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "148635fd6d819cdd",
+    "type": "tab",
+    "label": "Get PV Price",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "3159dee8dd0be246",
+    "type": "inject",
+    "z": "148635fd6d819cdd",
+    "name": "",
+    "props": [],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 110,
+    "y": 120,
+    "wires": [
+      [
+        "12c0f042a497cf08"
+      ]
+    ]
+  },
+  {
+    "id": "12c0f042a497cf08",
+    "type": "http request",
+    "z": "148635fd6d819cdd",
+    "name": "",
+    "method": "GET",
+    "ret": "txt",
+    "paytoqs": "ignore",
+    "url": "https://www.bfe-ogd.ch/ogd60_rmp_quartalspreise.xml",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 270,
+    "y": 120,
+    "wires": [
+      [
+        "b220fe6fe5a2aaf5"
+      ]
+    ]
+  },
+  {
+    "id": "b220fe6fe5a2aaf5",
+    "type": "xml",
+    "z": "148635fd6d819cdd",
+    "name": "",
+    "property": "payload",
+    "attr": "",
+    "chr": "",
+    "x": 430,
+    "y": 120,
+    "wires": [
+      [
+        "3b2d664eeae34508"
+      ]
+    ]
+  },
+  {
+    "id": "3b2d664eeae34508",
+    "type": "debug",
+    "z": "148635fd6d819cdd",
+    "name": "debug 2",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 640,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "1bbba121ccc50cec",
+    "type": "server",
+    "name": "Home Assistant",
+    "version": 6,
+    "addon": false,
+    "rejectUnauthorizedCerts": true,
+    "ha_boolean": [
+      "y",
+      "yes",
+      "true",
+      "on",
+      "home",
+      "open"
+    ],
+    "connectionDelay": true,
+    "cacheJson": true,
+    "heartbeat": false,
+    "heartbeatInterval": 30,
+    "areaSelector": "friendlyName",
+    "deviceSelector": "friendlyName",
+    "entitySelector": "friendlyName",
+    "statusSeparator": ": ",
+    "statusYear": "hidden",
+    "statusMonth": "short",
+    "statusDay": "numeric",
+    "statusHourCycle": "default",
+    "statusTimeFormat": "h:m",
+    "enableGlobalContextStore": false
+  },
+  {
+    "id": "db3aae792b683109",
+    "type": "global-config",
+    "env": [],
+    "modules": {
+      "node-red-contrib-home-assistant-websocket": "0.80.3",
+      "node-red-contrib-flowtest": "0.1.1"
+    }
+  }
+]
